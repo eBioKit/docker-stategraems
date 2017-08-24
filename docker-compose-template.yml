@@ -1,0 +1,45 @@
+############################################################
+# Launcher for STATegraEMS container for the eBioKit
+# This is a template, the following values must be replaced:
+#   - $${INSTANCE_NAME}, name for the instance
+#   - $${INSTANCE_PORT_1}, port number for wEMBOSS instance
+#   - $${ADMIN_USER}, name for admin user
+#   - $${ADMIN_PASS}, password for admin user
+#   - $${MYSQL_ROOT_PASSWORD}, password for the mysql server
+############################################################
+
+version: '2'
+services:
+
+    $${INSTANCE_NAME}-ems:
+      image: fikipollo/stategraems
+      container_name: $${INSTANCE_NAME}-ems
+      environment:
+        - EMS_ADMIN_USER=$${ADMIN_USER}
+        - EMS_ADMIN_PASSWORD=$${ADMIN_PASS}
+        - MYSQL_ROOT_PASSWORD=$${MYSQL_ROOT_PASSWORD}
+      links:
+        - $${INSTANCE_NAME}-mysql:stategraems-mysql
+      depends_on:
+        - $${INSTANCE_NAME}-mysql
+      volumes_from:
+        - $${INSTANCE_NAME}-data
+      ports:
+        - "$${INSTANCE_PORT_1}:8080"
+
+    $${INSTANCE_NAME}-mysql:
+      image: mysql
+      container_name: $${INSTANCE_NAME}-mysql
+      environment:
+        - MYSQL_ROOT_PASSWORD=$${MYSQL_ROOT_PASSWORD}
+      depends_on:
+        - $${INSTANCE_NAME}-data
+      volumes_from:
+        - $${INSTANCE_NAME}-data
+
+    $${INSTANCE_NAME}-data:
+      image: busybox
+      container_name: $${INSTANCE_NAME}-data
+      volumes:
+        - /data/$${INSTANCE_NAME}-data/mysql:/var/lib/mysql
+        - /data/$${INSTANCE_NAME}-data/data:/data
