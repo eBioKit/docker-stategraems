@@ -2,7 +2,7 @@
 # Launcher for STATegraEMS container for the eBioKit
 # This is a template, the following values must be replaced:
 #   - $${INSTANCE_NAME}, name for the instance
-#   - $${INSTANCE_PORT_1}, port number for wEMBOSS instance
+#   - $${INSTANCE_PORT_1}, port number for STATegraEMS instance
 #   - $${ADMIN_USER}, name for admin user
 #   - $${ADMIN_PASS}, password for admin user
 #   - $${MYSQL_ROOT_PASSWORD}, password for the mysql server
