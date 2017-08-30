@@ -11,14 +11,7 @@
 		"label": "Port number",
 		"type": "number",
 		"description": "The port number for the new instance",
-		"default": 8093
-	},
-	{
-		"name": "INSTANCE_URL",
-		"label": "URL",
-		"type": "text",
-		"description": "The URL for the new instance",
-		"default": "/stategraems"
+		"default": 8095
 	},
 	{
 		"name": "ADMIN_USER",

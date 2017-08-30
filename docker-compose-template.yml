@@ -28,7 +28,7 @@ services:
         - "$${INSTANCE_PORT_1}:8080"
 
     $${INSTANCE_NAME}-mysql:
-      image: mysql
+      image: mysql:5.7
       container_name: $${INSTANCE_NAME}-mysql
       environment:
         - MYSQL_ROOT_PASSWORD=$${MYSQL_ROOT_PASSWORD}
