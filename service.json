@@ -1,9 +1,9 @@
 {
 	"service":"stategraems",
-	"version":"0.1",
+	"version":"0.8",
 	"title":"STATegraEMS",
 	"description":"STATegra EMS: an Experiment Management System for complex next-generation omics experiments.",
 	"categories":"annotation,database,reproducibility,multi-omics,bioinformatics,web-based",
 	"website":"http://bioinfo.cipf.es/stategraems_test",
-	"dockers" : "fikipollo/stategraems"
+	"dockers" : "fikipollo/stategraems:0.8,mysql:5.7,busybox"
 }

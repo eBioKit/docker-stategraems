@@ -16,7 +16,7 @@
 	{
 		"name": "ADMIN_USER",
 		"label": "Admin account:",
-		"type": "text",
+		"type": "email",
 		"description": "The admin account used for administrate your STATegraEMS server."
 	},
 	{
