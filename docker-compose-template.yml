@@ -52,5 +52,5 @@ services:
       image: busybox
       container_name: $${INSTANCE_NAME}-data
       volumes:
-        - /data/$${INSTANCE_NAME}-data/mysql:/var/lib/mysql
-        - /data/$${INSTANCE_NAME}-data/data:/data
+        - /data/common-data/$${INSTANCE_NAME}-data/mysql:/var/lib/mysql
+        - /data/common-data/$${INSTANCE_NAME}-data/data:/data
